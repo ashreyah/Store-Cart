@@ -1,0 +1,166 @@
+<!--
+ Ahshreyah Ross
+ 24228793
+ 05-17-2023
+ about page
+-->
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>About Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
+        $(function() {
+            $('.dropdown').on({
+                'click': function(event) {
+                    if ($(event.target).closest('.dropdown-toggle').length) {
+                        $(this).data('closable', true);
+                    } else {
+                        $(this).data('closable', false);
+                    }
+                },
+                'hide.bs.dropdown': function(event) {
+                    hide = $(this).data('closable');
+                    $(this).data('closable', true);
+                    return hide;
+                }
+            });
+        });
+
+    </script>
+    <script>
+		
+		function Delete(e){
+			let items = [];
+            //alert(e.parentElement.parentElement.children[5].textContent);
+			JSON.parse(localStorage.getItem('items')).map(data=>{
+				if(data.id != e.parentElement.parentElement.children[5].textContent){
+					
+					items.push(data);
+
+				}
+			});
+			localStorage.setItem('items',JSON.stringify(items));
+			window.location.reload();
+		};
+	</script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Glamour Me Please</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Products
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="sunglasses.html">Sunglasses</a></li>
+                            <li><a class="dropdown-item" href="jewlery.html">Jewlery</a></li>
+                            <li><a class="dropdown-item" href="bags.html">Bags</a></li>
+                            <li><a class="dropdown-item" href="phone_cases.html">Phone-cases</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <div class="iconShopping">
+                            <p>0</p>
+                            <a class="nav-link" href="cart.html"><i class="fa fa-shopping-bag"></i></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="center-vertical">
+        <div class="about-us-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-lg-6 mb-6 mb-lg-0">
+                        <div class="img-head">
+                            <img src="images/img11.jpeg">
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <h2 class="text-head">
+                            know more about us
+                        </h2>
+                        <div class="break-small mb-2"></div>
+                        <p class="text-para">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+                        </p>
+                        <div class="row">
+                            <div class="ol-12 col-lg-6 mb-6 mb-lg-0">
+                                <div class="box">
+                                    <i class="fa fa-users mb-3"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="section-p1">
+        <div class="col col-6">
+            <h2>Glamour Me Please</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit,<br> sed do eiusmod tempor incididunt aliqua.
+            </p>
+            <div class="follow">
+                <h4>Follow Us</h4>
+                <div class="icon">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <h4>Quick Links</h4>
+            <a href="index.html">Home</a>
+            <a href="sunglasses.html">Sunglasses</a>
+            <a href="jewlery.html">Jwelery</a>
+            <a href="bags.html">Bags</a>
+            <a href="phone_cases.html">Phone-cases</a>
+            <a href="cart.html">View Cart</a>
+        </div>
+        <div class="col">
+            <h4>About</h4>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact Us</a>
+            <a href="#">Shipping Information</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & conditions</a>
+        </div>
+    </footer>
+
+    <script src="proj3.js">
+
+    </script>
+</body>
+
+</html>
